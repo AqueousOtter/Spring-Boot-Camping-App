@@ -21,13 +21,13 @@ public class Guest {
     private String email;
 
     @Column(name = "phone")
-    private double phone;
+    private String phone;
 
 
     public Guest() {
     }
 
-    public Guest(int guestID, String firstName, String lastName, String email, int phone) {
+    public Guest(int guestID, String firstName, String lastName, String email, String phone) {
         this.guestID = guestID;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -35,7 +35,7 @@ public class Guest {
         this.phone = phone;
     }
 
-    public Guest(String firstName, String lastName, String email, int phone) {
+    public Guest(String firstName, String lastName, String email, String phone) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -75,11 +75,11 @@ public class Guest {
         this.email = email;
     }
 
-    public double getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 }

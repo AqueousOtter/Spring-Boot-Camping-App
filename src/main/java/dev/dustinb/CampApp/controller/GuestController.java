@@ -24,6 +24,7 @@ public class GuestController {
         guestService = theGuestService;
     }
 
+    //shows registration form for new guest account
     @GetMapping("/addNewGuest")
     public String addNewGuest(Model theModel){
 
