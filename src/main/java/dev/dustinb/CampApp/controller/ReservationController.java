@@ -2,14 +2,12 @@ package dev.dustinb.CampApp.controller;
 
 
 
+import dev.dustinb.CampApp.entity.Guest;
 import dev.dustinb.CampApp.entity.Reservation;
 import dev.dustinb.CampApp.services.reservation.ReservationService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/reservation")
@@ -34,6 +32,21 @@ public class ReservationController {
         reservationService.save(theReservation);
         return "redirect:/";
     }
+
+    @GetMapping("/view/{reservationID}")
+    public String viewReservationById(@PathVariable("reservationID")String reservationID, Model theModel){
+
+        Reservation theReservation = reservationService.findByGuestId(reservationID);
+        theModel.addAttribute("reservationID", theReservation.getReservationId());
+        theModel.addAttribute("site", theReservation.getSiteNumber());
+        theModel.addAttribute("arrivalDate", theReservation.getStartDate());
+        theModel.addAttribute("departureDate", theReservation.getEndDate());
+        theModel.addAttribute("guestID", theReservation.getGuestID());
+
+
+        return "/viewReservation";
+    }
+
 
 
 

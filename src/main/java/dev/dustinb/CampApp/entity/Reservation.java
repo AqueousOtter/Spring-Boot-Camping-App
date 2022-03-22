@@ -15,7 +15,7 @@ public class Reservation {
 
     @Id
     @Column(name="id")
-    private String reservationCode;
+    private String reservationId;
 
     @Column(name = "site")
     private int siteNumber;
@@ -38,12 +38,12 @@ public class Reservation {
         this.guestID = guestID;
     }
 
-    public String getReservationCode() {
-        return reservationCode;
+    public String getReservationId() {
+        return reservationId;
     }
 
-    public void setReservationCode(String reservationCode) {
-        this.reservationCode = reservationCode;
+    public void setReservationId(String reservationCode) {
+        this.reservationId = reservationCode;
     }
 
     public int getSiteNumber() {

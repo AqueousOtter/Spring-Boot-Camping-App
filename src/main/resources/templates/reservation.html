@@ -21,7 +21,7 @@
       th:object="${reservation}" method="POST">
 
     <!-- Add hidden form field to handle update -->
-    <input type="hidden" th:field="*{reservationCode}" />
+    <input type="hidden" th:field="*{reservationId}" />
 
     <input type="number" th:field="*{siteNumber}"
            class="form-control mb-4 col-4" placeholder="Site Number">

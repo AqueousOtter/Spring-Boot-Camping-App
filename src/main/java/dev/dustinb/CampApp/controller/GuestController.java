@@ -5,10 +5,7 @@ import dev.dustinb.CampApp.entity.Guest;
 import dev.dustinb.CampApp.services.guest.GuestService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 /*
     Controller to register new guest, update guest info
@@ -41,6 +38,19 @@ public class GuestController {
         guestService.save(theGuest);
 
         return "redirect:/";
+    }
+
+    @GetMapping("/account/{guestId}")
+    public String showAccountInfo(@PathVariable("guestId") int guestId, Model theModel){
+        Guest theGuest = guestService.findById(guestId);
+        theModel.addAttribute("guest", theGuest);
+        theModel.addAttribute("guestId",guestId);
+        theModel.addAttribute("firstName" , theGuest.getFirstName());
+        theModel.addAttribute("lastName", theGuest.getLastName());
+        theModel.addAttribute("email", theGuest.getEmail());
+        theModel.addAttribute("phone", theGuest.getPhone());
+
+        return "/view";
     }
 
 }
