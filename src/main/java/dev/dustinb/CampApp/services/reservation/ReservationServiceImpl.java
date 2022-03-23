@@ -5,6 +5,7 @@ import dev.dustinb.CampApp.entity.Reservation;
 import dev.dustinb.CampApp.utilities.ConfirmationGen;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -28,8 +29,9 @@ public class ReservationServiceImpl implements ReservationService{
         return reservationRepository.findAll();
     }
 
+    //method to find reservation by reservation code/id
     @Override
-    public Reservation findByGuestId(String reservationID) {
+    public Reservation findByReservationId(String reservationID) {
         Optional<Reservation> results = reservationRepository.findById(reservationID);
 
         Reservation theReservation = null;
@@ -42,13 +44,17 @@ public class ReservationServiceImpl implements ReservationService{
         }
         return theReservation;
     }
-
-    //method to find reservation by reservation code/id
-
-    // method to find reservation by guest id
-
-
-
-
+    // method to find all reservations by a single guest id
+    @Override
+    public List<Reservation> findByGuestId(int guestId){
+        List<Reservation> reservations = reservationRepository.findAll();
+        List<Reservation> guestReservations = new ArrayList<>();
+        for (Reservation reservation : reservations) {
+            if (reservation.getGuestID() == guestId) {
+                guestReservations.add(reservation);
+            }
+        }
+        return  guestReservations;
+    }
 
 }

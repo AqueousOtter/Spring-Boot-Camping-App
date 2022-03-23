@@ -1,13 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
     <title>Home</title>
 </head>
 <body>
-<h3>Select an option...</h3>
-<a href="/guests/addNewGuest">Create New Guest</a>
-<br>
-<a href="/reservation/addReservation">Make A Reservation</a>
+<div class="container">
+    <h4>Guest</h4>
+    <a class="btn btn-secondary mb-2" href="/guests/addNewGuest">Create New Guest</a>
+    <br>
+    <a class="btn btn-secondary mb-2" href="/guests/account/1005">View Account (1005)</a>
+    <br>
+    <a class="btn btn-secondary mb-2" href="/reservations/addReservation">Make A Reservation</a>
+    <br>
+    <hr>
+    <h4>Management</h4>
+    <br>
+    <a class="btn btn-secondary mb-2" href="/reservations/showAll">Show All Reservations</a>`
+
+</div>
 </body>
 </html>

@@ -24,14 +24,14 @@
                 <th>Guest ID</th>
             </tr>
         <tr>
-            <td th:text="*{reservationID}"></td>
-            <td th:text="*{site}"></td>
-            <td th:text="*{arrivalDate}"></td>
-            <td th:text="*{departureDate}"></td>
-            <td th:text="*{guestID}"></td>
+            <td th:text="*{reservation.reservationId}"></td>
+            <td th:text="*{reservation.siteNumber}"></td>
+            <td th:text="*{reservation.startDate}"></td>
+            <td th:text="*{reservation.endDate}"></td>
+            <td th:text="*{reservation.guestID}"></td>
         </tr>
     </table>
-
+    <a href="/"> <button class="btn btn-info">Back to Main</button></a>
 </div>
 
 </body>

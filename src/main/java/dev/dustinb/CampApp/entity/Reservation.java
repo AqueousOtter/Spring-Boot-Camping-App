@@ -1,13 +1,8 @@
 package dev.dustinb.CampApp.entity;
 
 import javax.persistence.*;
+import java.sql.Date;
 
-
-/*
-        TODO
-        Change Date For input and database
-
- */
 
 @Entity
 @Table(name="reservations")
@@ -21,17 +16,17 @@ public class Reservation {
     private int siteNumber;
 
     @Column(name = "start_date")
-    private String startDate;
+    private Date startDate;
 
     @Column(name = "end_date")
-    private String endDate;
+    private Date endDate;
 
     @Column(name = "guest_id")
     private int guestID;
 
     public Reservation(){}
 
-    public Reservation(int siteNumber, String startDate, String endDate, int guestID) {
+    public Reservation(int siteNumber, Date startDate, Date endDate, int guestID) {
         this.siteNumber = siteNumber;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -54,19 +49,19 @@ public class Reservation {
         this.siteNumber = siteNumber;
     }
 
-    public String getStartDate() {
+    public Date getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(String startDate) {
+    public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
 
-    public String getEndDate() {
+    public Date getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(String endDate) {
+    public void setEndDate(Date endDate) {
         this.endDate = endDate;
     }
 

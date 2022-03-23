@@ -16,6 +16,7 @@
 <div class="container">
 <h3>Your Account</h3>
     <hr>
+    <a href="/"> <button class="btn btn-info">Back to Main</button></a>
     <table class="table table-sm">
         <tr>
             <th colspan="2">Your Account | <button class="btn btn-sm btn-info">Update</button></th>
@@ -35,6 +36,14 @@
         <tr>
             <td>Phone</td>
             <td th:text="*{guest.phone}"></td>
+        </tr>
+        <tr>
+            <td>
+                <a th:href="@{/reservations/guestReservation(guestId=${guest.guestID})}" class="btn btn-primary">
+                View Reservations
+            </a></td>
+
+
         </tr>
     </table>
 

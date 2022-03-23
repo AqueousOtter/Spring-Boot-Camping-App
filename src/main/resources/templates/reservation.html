@@ -12,29 +12,38 @@
 <body>
 <div class="container">
 <h3> New Reservation</h3>
+    <a href="/"> <button class="btn btn-info">Back to Main</button></a>
 
     <!--    TODO
         Edit form to send date
     -->
 
-<form action="#" th:action="@{/reservation/save}"
+<form action="#" th:action="@{/reservations/save}"
       th:object="${reservation}" method="POST">
 
     <!-- Add hidden form field to handle update -->
     <input type="hidden" th:field="*{reservationId}" />
 
-    <input type="number" th:field="*{siteNumber}"
-           class="form-control mb-4 col-4" placeholder="Site Number">
+    <label>Site Number
+        <input type="text" th:field="*{siteNumber}"
+               class="form-control mb-4 col-4" placeholder=" ">
+    </label>
 
-    <input type="text" th:field="*{startDate}"
-           class="form-control mb-4 col-4" placeholder="Start">
+    <label>Arrival
+        <input type="date" th:field="*{startDate}"
+               class="form-control mb-4 col-4" placeholder="mm/dd">
+    </label>
 
-    <input type="text" th:field="*{endDate}"
-           class="form-control mb-4 col-4" placeholder="End">
-    <input type="number" th:field="*{guestID}"
-           class="form-control mb-4 col-4" placeholder="GuestID">
+    <label>Departure
+        <input type="date" th:field="*{endDate}"
+               class="form-control mb-4 col-4" placeholder="End">
+    </label>
+    <label>Guest Number
+        <input type="number" th:field="*{guestID}"
+               class="form-control mb-4 col-4" placeholder="GuestID">
+    </label>
 
-    <button type="submit" class="btn btn-info col-2">Save</button>
+    <button type="submit" class="btn btn-info col-2">Reserve</button>
 
 </form>
 </div>

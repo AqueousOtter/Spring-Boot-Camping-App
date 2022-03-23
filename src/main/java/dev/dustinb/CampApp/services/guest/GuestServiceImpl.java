@@ -34,7 +34,7 @@ public class GuestServiceImpl implements GuestService {
             theGuest = result.get();
         }
         else{
-            throw new RuntimeException("Error- guest id of: " + theId + "not found");
+            throw new RuntimeException("Error - guest id of: " + theId + "not found");
         }
 
         return theGuest;

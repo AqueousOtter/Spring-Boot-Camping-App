@@ -7,8 +7,8 @@ import java.util.List;
 public interface ReservationService {
 
     public void save(Reservation theReservation);
-
     public List<Reservation> findAll();
+    public Reservation findByReservationId(String theId);
+    public List<Reservation> findByGuestId(int guestId);
 
-    public Reservation findByGuestId(String theId);
 }

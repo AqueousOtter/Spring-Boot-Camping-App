@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -27,23 +28,29 @@ public class ReservationController {
         return "/reservation";
     }
 
+    // saves reservation into the reservation database
     @PostMapping("/save")
     public String saveReservation(@ModelAttribute("reservation") Reservation theReservation){
         reservationService.save(theReservation);
         return "redirect:/";
     }
 
-    //Simplify code for single reservation
+    //view a reservation by the reservation ID code
     @GetMapping("/view/{reservationID}")
     public String viewReservationById(@PathVariable("reservationID")String reservationID, Model theModel){
+        Reservation theReservation = reservationService.findByReservationId(reservationID);
 
-        Reservation theReservation = reservationService.findByGuestId(reservationID);
-        theModel.addAttribute("reservationID", theReservation.getReservationId());
-        theModel.addAttribute("site", theReservation.getSiteNumber());
-        theModel.addAttribute("arrivalDate", theReservation.getStartDate());
-        theModel.addAttribute("departureDate", theReservation.getEndDate());
-        theModel.addAttribute("guestID", theReservation.getGuestID());
+        theModel.addAttribute("reservation", theReservation);
         return "/viewReservation";
+    }
+
+    //function to display reservation(s) by guest id
+    @GetMapping("/guestReservation")
+    public String showAllForGuest(@RequestParam("guestId")int guestId, Model theModel){
+        List<Reservation> guestReservations = null;
+        guestReservations = reservationService.findByGuestId(guestId);
+        theModel.addAttribute("reservations", guestReservations);
+        return  "/allReservations";
     }
 
     //Displays all reservations
@@ -54,8 +61,4 @@ public class ReservationController {
         theModel.addAttribute("reservations",allReservations);
         return "/allReservations";
     }
-
-
-
-
 }
