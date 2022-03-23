@@ -40,17 +40,13 @@ public class GuestController {
         return "redirect:/";
     }
 
+    //update guest by guestID
     @GetMapping("/account/{guestId}")
     public String showAccountInfo(@PathVariable("guestId") int guestId, Model theModel){
         Guest theGuest = guestService.findById(guestId);
         theModel.addAttribute("guest", theGuest);
-        theModel.addAttribute("guestId",guestId);
-        theModel.addAttribute("firstName" , theGuest.getFirstName());
-        theModel.addAttribute("lastName", theGuest.getLastName());
-        theModel.addAttribute("email", theGuest.getEmail());
-        theModel.addAttribute("phone", theGuest.getPhone());
 
-        return "/view";
+        return "account/userAccount";
     }
 
 }

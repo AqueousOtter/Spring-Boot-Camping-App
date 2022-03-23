@@ -1,6 +1,6 @@
 package dev.dustinb.CampApp.services.reservation;
 
-import dev.dustinb.CampApp.dao.ReservationRepository;
+import dev.dustinb.CampApp.repositories.ReservationRepository;
 import dev.dustinb.CampApp.entity.Reservation;
 import dev.dustinb.CampApp.utilities.ConfirmationGen;
 import org.springframework.stereotype.Service;

@@ -1,7 +1,7 @@
 package dev.dustinb.CampApp.services.guest;
 
 
-import dev.dustinb.CampApp.dao.GuestRepository;
+import dev.dustinb.CampApp.repositories.GuestRepository;
 import dev.dustinb.CampApp.entity.Guest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
