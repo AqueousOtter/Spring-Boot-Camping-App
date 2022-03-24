@@ -44,15 +44,6 @@ public class ReservationController {
         return "/viewReservation";
     }
 
-    //function to display reservation(s) by guest id
-    @GetMapping("/guestReservation")
-    public String showAllForGuest(@RequestParam("guestId")int guestId, Model theModel){
-        List<Reservation> guestReservations = null;
-        guestReservations = reservationService.findByGuestId(guestId);
-        theModel.addAttribute("reservations", guestReservations);
-        return  "/allReservations";
-    }
-
     //Displays all reservations
     @GetMapping("/showAll")
     public String showAllReservations(Model theModel){

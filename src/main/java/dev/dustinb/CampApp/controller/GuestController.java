@@ -2,10 +2,14 @@ package dev.dustinb.CampApp.controller;
 
 
 import dev.dustinb.CampApp.entity.Guest;
+import dev.dustinb.CampApp.entity.Reservation;
 import dev.dustinb.CampApp.services.guest.GuestService;
+import dev.dustinb.CampApp.services.reservation.ReservationService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /*
     Controller to register new guest, update guest info
@@ -16,8 +20,10 @@ import org.springframework.web.bind.annotation.*;
 public class GuestController {
 
     GuestService guestService;
+    ReservationService reservationService;
 
-    public GuestController(GuestService theGuestService){
+    public GuestController(GuestService theGuestService, ReservationService theReservationService){
+        reservationService = theReservationService;
         guestService = theGuestService;
     }
 
@@ -44,6 +50,8 @@ public class GuestController {
     @GetMapping("/account/{guestId}")
     public String showAccountInfo(@PathVariable("guestId") int guestId, Model theModel){
         Guest theGuest = guestService.findById(guestId);
+        List<Reservation> guestReservations = reservationService.findByGuestId(guestId);
+        theModel.addAttribute("reservations", guestReservations);
         theModel.addAttribute("guest", theGuest);
 
         return "account/userAccount";
