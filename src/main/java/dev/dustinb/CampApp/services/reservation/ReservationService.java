@@ -9,6 +9,5 @@ public interface ReservationService {
     public void save(Reservation theReservation);
     public List<Reservation> findAll();
     public Reservation findByReservationId(String theId);
-    public List<Reservation> findByGuestId(int guestId);
-
+    public List<Reservation> findAllGuestById(int guestId);
 }

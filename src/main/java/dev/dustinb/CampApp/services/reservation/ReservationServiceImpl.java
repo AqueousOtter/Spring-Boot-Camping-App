@@ -44,17 +44,12 @@ public class ReservationServiceImpl implements ReservationService{
         }
         return theReservation;
     }
-    // method to find all reservations by a single guest id TODO: Refactor function
+
+    //finds all reservations for a given guest id via query in ReservationRepository
     @Override
-    public List<Reservation> findByGuestId(int guestId){
-        List<Reservation> reservations = reservationRepository.findAll();
-        List<Reservation> guestReservations = new ArrayList<>();
-        for (Reservation reservation : reservations) {
-            if (reservation.getGuestID() == guestId) {
-                guestReservations.add(reservation);
-            }
-        }
-        return  guestReservations;
+    public List<Reservation> findAllGuestById(int guestId) {
+        return reservationRepository.findAllForGuest(guestId);
     }
+
 
 }

@@ -48,18 +48,16 @@
             <th>Site Number</th>
             <th>Arrival</th>
             <th>Departure</th>
-            <th>Guest ID</th>
         </tr>
         <tr th:each="tempReservation : ${reservations}">
             <td th:text="*{tempReservation.reservationId}"></td>
             <td th:text="*{tempReservation.siteNumber}"></td>
             <td th:text="*{tempReservation.startDate}"></td>
             <td th:text="*{tempReservation.endDate}"></td>
-            <td th:text="*{tempReservation.guestID}"></td>
 
         </tr>
     </table>
-    <p th:unless="${!reservations.isEmpty()}">No Reservations</p>
+    <p th:unless="${!reservations.isEmpty()}" class="fst-italic">No Reservations</p>
 
 </div>
 </body>

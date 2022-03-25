@@ -50,7 +50,7 @@ public class GuestController {
     @GetMapping("/account/{guestId}")
     public String showAccountInfo(@PathVariable("guestId") int guestId, Model theModel){
         Guest theGuest = guestService.findById(guestId);
-        List<Reservation> guestReservations = reservationService.findByGuestId(guestId);
+        List<Reservation> guestReservations = reservationService.findAllGuestById(guestId);
         theModel.addAttribute("reservations", guestReservations);
         theModel.addAttribute("guest", theGuest);
 
