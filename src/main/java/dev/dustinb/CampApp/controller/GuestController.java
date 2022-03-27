@@ -30,19 +30,15 @@ public class GuestController {
     //shows registration form for new guest account
     @GetMapping("/addNewGuest")
     public String addNewGuest(Model theModel){
-
         Guest theGuest = new Guest();
         theModel.addAttribute(theGuest);
-
         return "/register";
-
     }
 
     //save new guest
     @PostMapping("/save")
     public String saveGuest(@ModelAttribute("guest") Guest theGuest){
         guestService.save(theGuest);
-
         return "redirect:/";
     }
 
@@ -50,11 +46,14 @@ public class GuestController {
     @GetMapping("/account/{guestId}")
     public String showAccountInfo(@PathVariable("guestId") int guestId, Model theModel){
         Guest theGuest = guestService.findById(guestId);
-        List<Reservation> guestReservations = reservationService.findAllGuestById(guestId);
+        //check for reservations owned by the guest via id
+        List<Reservation> guestReservations = reservationService.findAllReservationsByGuestId(guestId);
         theModel.addAttribute("reservations", guestReservations);
         theModel.addAttribute("guest", theGuest);
 
         return "account/userAccount";
     }
+
+
 
 }

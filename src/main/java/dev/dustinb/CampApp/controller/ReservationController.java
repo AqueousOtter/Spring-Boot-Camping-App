@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
+import java.sql.Date;
 import java.util.List;
 
 @Controller
@@ -50,6 +50,18 @@ public class ReservationController {
         List<Reservation> allReservations = null;
         allReservations = reservationService.findAll();
         theModel.addAttribute("reservations",allReservations);
+        return "/allReservations";
+    }
+
+    @GetMapping("/openDates")
+    public String searchDates(@ModelAttribute("searchDate") Reservation searchReservation){
+        return "/searchReservations";
+    }
+    @GetMapping("/showAllOpenDates")
+    public String showAllOpenDates(@ModelAttribute("searchDate") Date searchDate, Model theModel){
+        theModel.addAttribute("searchDate", searchDate);
+        List<Integer> openDates = reservationService.openReservations(searchDate);
+        theModel.addAttribute("reservations", openDates);
         return "/allReservations";
     }
 }

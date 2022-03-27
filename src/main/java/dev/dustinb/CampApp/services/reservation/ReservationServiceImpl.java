@@ -5,6 +5,7 @@ import dev.dustinb.CampApp.entity.Reservation;
 import dev.dustinb.CampApp.utilities.ConfirmationGen;
 import org.springframework.stereotype.Service;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -13,6 +14,8 @@ import java.util.Optional;
 public class ReservationServiceImpl implements ReservationService{
 
     ReservationRepository reservationRepository;
+    //array to hold NorthLake Site Numbers
+    final int[] CAMPSITES = {12,13,14,25,11,1};
 
     public ReservationServiceImpl(ReservationRepository theReservationRepository){
         reservationRepository = theReservationRepository;
@@ -45,11 +48,32 @@ public class ReservationServiceImpl implements ReservationService{
         return theReservation;
     }
 
-    //finds all reservations for a given guest id via query in ReservationRepository
     @Override
-    public List<Reservation> findAllGuestById(int guestId) {
-        return reservationRepository.findAllForGuest(guestId);
+    public List<Integer> openReservations(Date searchStartDate) {
+        List<Integer> openSites = new ArrayList<>();
+        List<Integer> reservedDates = reservationRepository.findAllNotOpenDates(searchStartDate);
+        System.out.println(reservedDates.toString());
+        if(reservedDates.isEmpty()){
+            for(int i = 0; i < CAMPSITES.length; i++){
+                openSites.add(CAMPSITES[i]);
+            }
+        }
+        else {
+            for (int i = 0; i < reservedDates.size(); i++) {
+                if (CAMPSITES[i] != reservedDates.get(i)) {
+                    openSites.add(CAMPSITES[i]);
+                }
+            }
+        }
+        return openSites;
     }
 
+
+
+    //finds all reservations for a given guest id via query in ReservationRepository
+    @Override
+    public List<Reservation> findAllReservationsByGuestId(int guestId) {
+        return reservationRepository.findAllForGuest(guestId);
+    }
 
 }
