@@ -24,8 +24,7 @@ public class ReservationController {
     public String addReservation(Model theModel){
         Reservation theReservation = new Reservation();
         theModel.addAttribute(theReservation);
-
-        return "/reservation";
+        return "/reservations/reservation";
     }
 
     // saves reservation into the reservation database
@@ -41,7 +40,7 @@ public class ReservationController {
         Reservation theReservation = reservationService.findByReservationId(reservationID);
 
         theModel.addAttribute("reservation", theReservation);
-        return "/viewReservation";
+        return "/reservations/viewReservation";
     }
 
     //Displays all reservations
@@ -50,18 +49,19 @@ public class ReservationController {
         List<Reservation> allReservations = null;
         allReservations = reservationService.findAll();
         theModel.addAttribute("reservations",allReservations);
-        return "/allReservations";
+        return "/reservations/allReservations";
     }
 
     @GetMapping("/openDates")
-    public String searchDates(@ModelAttribute("searchDate") Reservation searchReservation){
-        return "/searchReservations";
+    public String searchDates(){
+        return "/reservations/searchReservations";
     }
     @GetMapping("/showAllOpenDates")
-    public String showAllOpenDates(@ModelAttribute("searchDate") Date searchDate, Model theModel){
+    public String showAllOpenDates(@ModelAttribute("searchDate") Date searchDate,Date searchEndDate, Model theModel){
         theModel.addAttribute("searchDate", searchDate);
         List<Integer> openDates = reservationService.openReservations(searchDate);
-        theModel.addAttribute("reservations", openDates);
-        return "/allReservations";
+        theModel.addAttribute("openDates", openDates);
+        theModel.addAttribute("searchEndDate", searchEndDate);
+        return "/reservations/available";
     }
 }

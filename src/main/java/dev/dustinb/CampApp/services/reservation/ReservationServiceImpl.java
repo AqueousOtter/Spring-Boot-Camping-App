@@ -48,28 +48,24 @@ public class ReservationServiceImpl implements ReservationService{
         return theReservation;
     }
 
+    // method to display only open dates for reservations
     @Override
     public List<Integer> openReservations(Date searchStartDate) {
         List<Integer> openSites = new ArrayList<>();
+        //Grabs all reservations that conflict with searched date
         List<Integer> reservedDates = reservationRepository.findAllNotOpenDates(searchStartDate);
-        System.out.println(reservedDates.toString());
-        if(reservedDates.isEmpty()){
-            for(int i = 0; i < CAMPSITES.length; i++){
-                openSites.add(CAMPSITES[i]);
-            }
+        //populate potential open sites
+        for (int campsite : CAMPSITES) {
+            openSites.add(campsite);
         }
-        else {
-            for (int i = 0; i < reservedDates.size(); i++) {
-                if (CAMPSITES[i] != reservedDates.get(i)) {
-                    openSites.add(CAMPSITES[i]);
-                }
+        //check for matching dates, omit if already booked.
+        if(!reservedDates.isEmpty()){
+            for (Integer reservedDate : reservedDates) {
+                openSites.remove(reservedDate);
             }
         }
         return openSites;
     }
-
-
-
     //finds all reservations for a given guest id via query in ReservationRepository
     @Override
     public List<Reservation> findAllReservationsByGuestId(int guestId) {

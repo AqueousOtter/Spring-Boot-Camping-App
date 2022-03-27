@@ -22,7 +22,11 @@
         method="GET">
 
         <label>Arrival
-            <input type="date" th:value="*{searchDate}" name="searchDate"
+            <input type="date" name="searchDate"
+                   class="form-control mb-4 col-4" placeholder="mm/dd">
+        </label>
+        <label>Departure
+            <input type="date" name="searchEndDate"
                    class="form-control mb-4 col-4" placeholder="mm/dd">
         </label>
 
