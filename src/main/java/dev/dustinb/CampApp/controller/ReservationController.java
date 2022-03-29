@@ -23,6 +23,7 @@ public class ReservationController {
     @GetMapping("/addReservation")
     public String addReservation(Model theModel){
         Reservation theReservation = new Reservation();
+
         theModel.addAttribute(theReservation);
         return "/reservations/reservation";
     }
@@ -59,7 +60,7 @@ public class ReservationController {
     @GetMapping("/showAllOpenDates")
     public String showAllOpenDates(@ModelAttribute("searchDate") Date searchDate,Date searchEndDate, Model theModel){
         theModel.addAttribute("searchDate", searchDate);
-        List<Integer> openDates = reservationService.openReservations(searchDate);
+        List<Reservation> openDates = reservationService.openReservations(searchDate, searchEndDate);
         theModel.addAttribute("openDates", openDates);
         theModel.addAttribute("searchEndDate", searchEndDate);
         return "/reservations/available";

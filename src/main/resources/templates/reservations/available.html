@@ -23,10 +23,11 @@
             <th></th>
         </tr>
         <tr th:each="openReservation : ${openDates}">
-            <td th:text="*{openReservation}"></td>
+<!-- TODO: finish reservation form to addReservation -->
+            <td th:text="*{openReservation.siteNumber}"></td>
             <td th:text="*{searchDate}"></td>
             <td th:text="*{searchEndDate}"></td>
-            <td><a href="reservation.html" class="btn btn-primary">Reserve</a></td>
+            <td><a th:action="@{/reservations/addReservation}" class="btn btn-primary">Reserve</a></td>
 
         </tr>
     </table>

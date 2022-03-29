@@ -15,7 +15,7 @@ public class ReservationServiceImpl implements ReservationService{
 
     ReservationRepository reservationRepository;
     //array to hold NorthLake Site Numbers
-    final int[] CAMPSITES = {12,13,14,25,11,1};
+    final int[] CAMPSITES = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32};
 
     public ReservationServiceImpl(ReservationRepository theReservationRepository){
         reservationRepository = theReservationRepository;
@@ -50,8 +50,9 @@ public class ReservationServiceImpl implements ReservationService{
 
     // method to display only open dates for reservations
     @Override
-    public List<Integer> openReservations(Date searchStartDate) {
+    public List<Reservation> openReservations(Date searchStartDate, Date searchEndDate) {
         List<Integer> openSites = new ArrayList<>();
+        List<Reservation> openReservations = new ArrayList<>();
         //Grabs all reservations that conflict with searched date
         List<Integer> reservedDates = reservationRepository.findAllNotOpenDates(searchStartDate);
         //populate potential open sites
@@ -64,7 +65,10 @@ public class ReservationServiceImpl implements ReservationService{
                 openSites.remove(reservedDate);
             }
         }
-        return openSites;
+        for (Integer openSite : openSites) {
+            openReservations.add(new Reservation(openSite, searchStartDate, searchEndDate, 1005));
+        }
+        return openReservations;
     }
     //finds all reservations for a given guest id via query in ReservationRepository
     @Override

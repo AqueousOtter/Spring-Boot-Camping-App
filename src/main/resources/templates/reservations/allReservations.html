@@ -24,7 +24,11 @@
             <th>Guest ID</th>
         </tr>
         <tr th:each="tempReservation : ${reservations}">
-            <td th:text="*{tempReservation}"></td>
+            <td th:text="*{tempReservation.reservationId}"></td>
+            <td th:text="*{tempReservation.siteNumber}"></td>
+            <td th:text="*{tempReservation.startDate}"></td>
+            <td th:text="*{tempReservation.endDate}"></td>
+            <td th:text="*{tempReservation.guestID}"></td>
 
 
         </tr>
