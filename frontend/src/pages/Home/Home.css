@@ -1,0 +1,70 @@
+.home {
+    background: linear-gradient(rgba(146, 146, 146, 0.164), rgba(146, 146, 146, 0.199)), url("../../../public/assets/img/camp-bg.jpg");
+    margin: 0 auto;
+    padding-top: 0px;
+    height: 100vh;
+    color: #fff;
+}
+
+.main-content {
+    width: 75%;
+    margin: 0 auto;
+    text-shadow: rgb(91, 91, 91) 2px 2px 6px ;
+    text-align: justify;
+}
+
+.home p {
+    font-size: 24px;
+    padding-left: 40px;
+}
+h2 {
+    font-size: 80px;
+    font-weight: bold;
+    margin: auto;
+    padding-top: 15%;
+
+}
+.home-reserve {
+    background-color: #3030305e; 
+    
+    color: #fff;
+    width: 80%;
+    height: 75px;
+    border: 2px solid black;
+    border-radius: 60px;
+    margin: auto;
+    margin-top: 20%;
+    display: flex;
+    justify-content: space-between;
+}
+.home-reserve p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #fff;
+    text-shadow: rgb(0, 0, 0) 2px 2px 6px ;
+}
+.weather {
+    margin-left: 5%;
+    display: flex;
+
+    align-items: center;
+}
+form{
+    display: flex;
+ 
+    margin: auto;
+    align-items: center;
+
+}
+.home-reserve-label {
+    display: flex;
+    align-items: center;
+    flex-direction: column;   
+
+     
+}
+input  {
+    width: 120px;
+    margin-left: 5px;
+    text-align: center;
+}
