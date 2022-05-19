@@ -1,0 +1,44 @@
+.activities-section {
+    background-color: #FFEDD2;
+    height: 100vh;
+  
+    text-align: center;
+}
+.activity-cards-section {
+   
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+.activity-cards  {
+    margin-top: 75px;
+    background-color: #fff;
+    height: 700px;
+    width: 450px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 10px -1px rgb(151, 151, 151);
+}
+
+
+.activity-cards img {
+    border-radius: 20px 20px 0px 0px;
+    height: 480px;
+    width: 100%;
+   
+}
+.activity-cards p {
+    margin: 20px  50px 0px 50px; 
+}
+
+.summary {
+    box-shadow: 4px 4px 10px -1px rgb(151, 151, 151);
+    border: 2px green solid;
+    background-color: #ADDEB8;
+    border-radius: 20px;
+    width: 80%;
+    margin: 40px auto;
+}
+.summary p {
+    margin: 20px 30px;
+}
