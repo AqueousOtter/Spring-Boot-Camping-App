@@ -25,12 +25,13 @@ function App() {
       <div className="home-page" id='home'>
         <Home />
       </div>
-      <div id="about"className="about-page">
-        <About />
-      </div>
       <div className="activities-page" id='activities'>
         <Activities />
       </div>
+      <div id="about"className="about-page">
+        <About />
+      </div>
+
       <div className="rates-page" id='rates'>
         <Rates />
       </div>
