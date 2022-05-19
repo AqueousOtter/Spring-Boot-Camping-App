@@ -1,21 +1,22 @@
 .home {
+    border: 4px yellow solid; /* TODO: remove, testing only */
     background: linear-gradient(rgba(146, 146, 146, 0.164), rgba(146, 146, 146, 0.199)), url("../../../public/assets/img/camp-bg.jpg");
     margin: 0 auto;
     padding-top: 0px;
     height: 100vh;
-    color: #fff;
+    color: rgb(68, 68, 68);
 }
 
 .main-content {
+    color: rgb(255, 255, 255);
     width: 75%;
     margin: 0 auto;
-    text-shadow: rgb(91, 91, 91) 2px 2px 6px ;
+    text-shadow: rgb(0, 0, 0) 2px 3px 6px ;
     text-align: justify;
 }
 
 .home p {
     font-size: 24px;
-    padding-left: 40px;
 }
 h2 {
     font-size: 80px;
@@ -25,34 +26,32 @@ h2 {
 
 }
 .home-reserve {
-    background-color: #3030305e; 
-    
-    color: #fff;
+    background-color: #eee; 
     width: 80%;
     height: 75px;
     border: 2px solid black;
     border-radius: 60px;
     margin: auto;
-    margin-top: 20%;
+    margin-top: 25px;
     display: flex;
     justify-content: space-between;
 }
 .home-reserve p {
     font-size: 18px;
     margin-bottom: 10px;
-    color: #fff;
-    text-shadow: rgb(0, 0, 0) 2px 2px 6px ;
+
 }
 .weather {
     margin-left: 5%;
     display: flex;
-
     align-items: center;
+}
+.weather img {
+    margin-right: 15px;
 }
 form{
     display: flex;
- 
-    margin: auto;
+    margin-right: 35px;
     align-items: center;
 
 }
@@ -60,11 +59,16 @@ form{
     display: flex;
     align-items: center;
     flex-direction: column;   
-
-     
+    justify-content: space-between;
+    margin: 0 10px;
 }
 input  {
     width: 120px;
-    margin-left: 5px;
     text-align: center;
+    margin-bottom: 15px;
+}
+.home-reserve button {
+    margin-left: 10px;
+    padding: 5px 10px;
+
 }

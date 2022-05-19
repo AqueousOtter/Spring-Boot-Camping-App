@@ -4,3 +4,7 @@
 nav {
   max-height: 50px;
 }
+.about-page {
+  border: 4px red solid; /* TODO: remove, testing only */
+  background-color: #FFEDD2;
+}
