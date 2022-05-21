@@ -8,6 +8,7 @@ Run NorthLakeCampground SQL to create database. Currently, you must run the app 
 
 ## Roadmap
 
+Currently building react frontend
 Future updates to include: full search functionality for guests to reserve sites, login pages, confirmation PDFs/email. 
 
 ## Known Issues
