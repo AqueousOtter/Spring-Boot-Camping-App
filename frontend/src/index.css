@@ -3,6 +3,7 @@ body {
   font-family: 'Ubuntu', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: black;
+  background-color: #FFEDD2;
+  background: linear-gradient(FFEDD2rgba(88, 88, 88, 0.164), FFEDD2(88, 88, 88, 0.199));
 }
 

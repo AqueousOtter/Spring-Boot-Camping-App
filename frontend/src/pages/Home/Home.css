@@ -1,8 +1,7 @@
 .home {
-    border: 4px yellow solid; /* TODO: remove, testing only */
-    background: linear-gradient(rgba(146, 146, 146, 0.164), rgba(146, 146, 146, 0.199)), url("../../../public/assets/img/camp-bg.jpg");
+    background: linear-gradient(rgba(88, 88, 88, 0.164), rgba(88, 88, 88, 0.199)), url("../../../public/assets/img/camp-bg.jpg");
     margin: 0 auto;
-    padding-top: 0px;
+    padding-top: 50px;
     height: 100vh;
     color: rgb(68, 68, 68);
 }
@@ -32,7 +31,6 @@ h2 {
     border: 2px solid black;
     border-radius: 60px;
     margin: auto;
-    margin-top: 25px;
     display: flex;
     justify-content: space-between;
 }

@@ -29,7 +29,7 @@ export default function Home() {
                   <button className='submit'>explore</button>
         
                 </form>
-        </div>
+      </div>
       
 
       <div className="main-content">
