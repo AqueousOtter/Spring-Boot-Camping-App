@@ -3,6 +3,9 @@
     height: 100vh;
     margin:   0 auto;
 }
+.about-section h3 {
+    font-size: 48px;
+}
 .about-content {
     width: 90%;
     display: flex;   
@@ -10,6 +13,7 @@
     padding-top: 50px;
 
 }
+
 .about-slideshow {
     text-align: center;
     height: 580px;
@@ -25,10 +29,11 @@
     height: 500px;
 }
 .about-info {
+    
     max-height: 90%;
     background-color: #fff8ec;
     border: dashed burlywood 4px;
-    max-width: 40%;
+    max-width: 500px;
     text-align: center;
     margin: 0 20px;
     border-radius: 25px;

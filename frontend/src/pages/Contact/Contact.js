@@ -36,6 +36,9 @@ export default function Contact() {
             <li>Address</li>
            
           </ul>
+          <div className="gps-map">
+            
+          </div>
 
         </div>
       </div>

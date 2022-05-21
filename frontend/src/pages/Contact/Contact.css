@@ -45,6 +45,16 @@
 }
 
 .contact-information {
-    border: 2px slategrey solid;
-    width: 550px;
+    box-shadow: 3px 4px 5px rgb(0, 0, 0);
+    border: 1px solid grey;
+    background-color: #e4e4e4;
+    border-radius: 6px;
+    padding: 15px;
+    width: 500px;
+}
+.contact-information ul {
+    list-style-type: none;
+}
+.contact-information ul li {
+    padding-top: 15px;
 }
