@@ -13,6 +13,7 @@ import java.util.List;
         Class currently TEST only, supports get request of all guests or single guest
  */
 
+
 @RestController
 @RequestMapping("/api")
 public class RestGuestController {
