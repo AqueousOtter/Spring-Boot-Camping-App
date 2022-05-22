@@ -1,15 +1,25 @@
 import React from 'react'
 
-export default function ReservationList() {
+export default function ReservationList({reservations}) {
   return (
       <div className="reservation-list">
-          {ReservationList.map(reservation => (
-              <div key={reservation.id}>
-                  
+        <table>
+            <tr>
+                <th>Site Number</th>
+                <th>Arrival</th>
+                <th>Departure</th>
+                <th></th>
+            </tr>
+          {reservations.map(reservation => (
 
-              </div> 
+                  <tr key={reservation.siteNumber}>
+                      <td>{reservation.siteNumber}</td>
+                      <td>{reservation.startDate}</td>
+                      <td>{reservation.endDate}</td>
+                  </tr>
           
           ))}
+          </table>
 
 
 
