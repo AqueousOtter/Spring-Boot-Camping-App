@@ -8,9 +8,16 @@ import './Reserve.css'
 export default function Reserve() {
   
   const queryString = useLocation().search
-  const queryParams = new URLSearchParams(queryString)
-  const query = queryParams.get('s')//gets value passed from searchbar.js
-  const url = "http://localhost:8090/reservations/available/" + query 
+  console.log(queryString)
+  const arrival = new URLSearchParams(queryString).get('arrival')
+  const departure = new URLSearchParams(queryString).get('departure')
+
+  console.log('a'+arrival)
+
+  console.log(departure)
+  const query = arrival +'/' + departure
+  console.log(departure)
+  const url = "http://localhost:8090/reservations/available/" +query
   const {data: reservations, isPending, error} = useFetch(url)
   console.log(reservations)
 
@@ -21,9 +28,11 @@ export default function Reserve() {
         <SearchBar />
         {isPending && <div>Loading...</div>}
         {error && <div>{error}</div>}
+
         {reservations && <ReservationList reservations={reservations} />}
 
       </div>
+
 
 
     </div>

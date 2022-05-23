@@ -1,18 +1,19 @@
 
-.reservation-list {
 
-
-
-
+.reservation-list{
+    border-radius: 20px;
+    height: 800px;
+    width: 75%;
+    margin: auto;
+    margin-top: 25px;
+    padding: 10px 10px 10px 10px;
+    overflow: scroll;
+    text-align: center;
+    
 }
-.table {
-    width: fit-content;
-    border: 2px solid black;
+thead{
+    position: sticky;
+    top: 0px;
+    margin: 0 0 0 0;
 }
-.reservation-list table {
-    overflow-y:scroll;
-   height:500px;
-   margin: auto;
-   display: block;
 
-}

@@ -11,7 +11,7 @@ export default function SearchBar() {
     const navigate = useNavigate()
     const handleSubmit = (e) => {
         e.preventDefault()
-        navigate(`/reserve?s=${start}/${end}`)
+        navigate(`/reserve?arrival=${start}&departure=${end}`)
     }
 
   return (
