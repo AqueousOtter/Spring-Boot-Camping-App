@@ -3,14 +3,14 @@ import './ReservationList.css'
 export default function ReservationList({reservations}) {
   return (
     
-      <div className="reservation-list container">
+      <div className="reservation-list ">
         <table className='table table-striped table-hover'>
           <thead className='thead'>
             <tr>
                 <th>Site Number</th>
                 <th>Arrival</th>
                 <th>Departure</th>
-                <th></th>
+                <th>asda</th>
             </tr>
             </thead>
             <tbody>
@@ -20,7 +20,7 @@ export default function ReservationList({reservations}) {
                       <td>{reservation.siteNumber}</td>
                       <td>{reservation.startDate}</td>
                       <td>{reservation.endDate}</td>
-                      <td></td>
+                      <td>ass</td>
                   </tr>
           
           ))}

@@ -1,12 +1,18 @@
 
 .reservation-list {
-    height: 100vh;
-    width: 80%;
-    margin: auto;
-    display: flex;
+
+
 
 
 }
+.table {
+    width: fit-content;
+    border: 2px solid black;
+}
 .reservation-list table {
-    height: 80vh;
+    overflow-y:scroll;
+   height:500px;
+   margin: auto;
+   display: block;
+
 }
