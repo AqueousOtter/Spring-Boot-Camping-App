@@ -1,6 +1,7 @@
 import React from 'react'
 import "./About.css"
 
+
 export default function About() {
   console.log("about loaded")
   return (
