@@ -1,17 +1,17 @@
 
 .about-section {
-    height: 100vh;
-    margin:   0 auto;
+    height: 80vh;
+    margin: auto;
+    display: flex;
 }
 .about-section h3 {
     font-size: 48px;
 }
 .about-content {
+    margin: auto;
     width: 90%;
     display: flex;   
     justify-content: space-evenly;
-    padding-top: 50px;
-
 }
 
 .about-slideshow {
@@ -22,7 +22,6 @@
 }
 
 .about-slideshow img {
-
     border: 2px orange solid;
     width: 500px;
     margin: 10px 20px;

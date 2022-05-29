@@ -1,11 +1,15 @@
 .rate-section {
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-color: aliceblue;
     margin: auto;
     text-align: center;
 }
 .rate-content {
+
+    margin: auto;
     display: flex;
-    justify-content:center;
 }
 .rate-section ul{
     list-style-type: none;
@@ -15,7 +19,7 @@
 }
 .map-card img {
     margin-top: 50px;
-    margin-right: 55px;
+    margin-left: 200px;
     width: 700px;
     height: 425px;
     box-shadow: 3px 4px 5px rgb(128, 128, 128);
@@ -31,9 +35,7 @@
     box-shadow: 3px 4px 5px rgb(128, 128, 128);
 
 }
-.rate-info h4 {
-    padding-bottom: 20px;
-}
+
 .rate-type {
     text-align: left;
     margin-left: 25px;

@@ -11,36 +11,49 @@ export default function Contact() {
           <form action="">
             <label>
               <span>Name</span>
-              <input type="text" placeholder='Full Name' />
+              <input type="text" id='name' placeholder='Full Name' />
             </label>
             <label>
               <span>Email</span>
-              <input type="text" placeholder='email@address.com'/>
+              <input type="text" id='email' placeholder='email@address.com'/>
             </label>
         
             <label id='message'>
               <span>Message</span>
-              <textarea rows="10" cols="60" name="message" id="" placeholder='Enter your message here' />
+              <textarea rows="10" cols="38" name="message" id="" placeholder='Enter your message here' />
             </label>
-            <button>Send</button>
+            <button className='btn btn-success btn-lg'>Send</button>
           </form>
           
         </div>
-        <div className="contact-information">
-          <h3>Contact Us</h3>
-          <ul>
-            <li>Office Hours</li>
-            <li>Phone</li>
-            <li>email</li>
-            <li>facebook/instagram</li>
-            <li>Address</li>
-           
-          </ul>
-          <div className="gps-map">
+        <div className="contact-container">
+          <div className="contact-information">
+            <h3>Contact Us</h3>
+            <ul>
+              <li>Office Hours</li>
+              <li>Phone</li>
+              <li>email</li>
+              <li>facebook/instagram</li>
+              <li>Address</li>
             
+            </ul>
+            <div className="gps-map">
+              
+            </div>
+            <hr />
+            <h4>connect with us</h4>
+  
+          <div className='contact-icons'>
+
+            <img src="./assets/icons/facebook-icon.png" alt="facebook icon" className="facebook" />
+            <img src="./assets/icons/instagram-icon.png" alt="instagram icon" className="instagram" />
           </div>
 
+          </div>
+          
+
         </div>
+        
       </div>
 
     </div>

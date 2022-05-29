@@ -4,31 +4,8 @@ import "./Activities.css"
 export default function Activities() {
   return (
     <div>
-       <div className="feature-bar">
-        <div className="feature-one">
-          <img src="./assets/icons/forest-icon.svg" alt="tree icon" />
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi eligendi.</p>
-        </div>
-        <div className="feature-two">
-          <img src="./assets/icons/swim-icon.svg" alt="swimming icon" className="swim-icon" />
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi eligendi.</p>
-        </div>
-        <div className="feature-three">
-          <img src="./assets/icons/EV-icon.svg" alt="electric vehicle charing icon" className="ev-icon" />
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi eligendi.</p>
-        </div>
-        <div className="feature-four">
-          <img src="./assets/icons/pets-icon.svg" alt="pets allowed icon" className="pets-icon" />
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi eligendi.</p>
-        </div>
-        <div className="feature-five">
-          <img src="./assets/icons/plug-icon.svg" alt="electricity icon" className="electric-icon" />
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi eligendi.</p>
-        </div>
-
-
-      </div>
       <div className="activities-section">
+      <h2>Experiences</h2>
         <div className="activity-cards-section">
           <div className="activity-card-one activity-cards">
             <img src="./assets/img/sunset-boat.jpg" alt="sunset boating" />

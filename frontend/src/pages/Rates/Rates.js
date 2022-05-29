@@ -11,13 +11,7 @@ export default function Rates() {
   return (
     <div className='rate-section'>
       <div className="rate-content">
-        <div className="map-card">
-          <img src="./assets/map.jpg" alt="park map" />
-          <p><a href="/">download park map</a></p>
-        </div>
-
-
-        <div className="rate-info">
+      <div className="rate-info">
           <h4>Campground Rates</h4>
           <hr />
           <p className="rate-type">Tent Sites: </p>
@@ -38,6 +32,13 @@ export default function Rates() {
           <p>Any site with more than 4 adults or 4 children will be charged an additional $10 per person, per night.</p>
           Please read our <a href="/">RULES</a> before booking your stay. 
         </div>
+        <div className="map-card">
+          <img src="./assets/map.jpg" alt="park map" />
+          <p><a href="/">download park map</a></p>
+        </div>
+
+
+
       </div>
     </div>
   )
