@@ -21,6 +21,11 @@ public class RestReservationController {
         reservationService = theReservationService;
     }
 
+    @GetMapping("/allReservations")
+    public List<Reservation> showAllReservations(){
+        return reservationService.findAll();
+    }
+
     @GetMapping("/available/{startDate}/{endDate}")
     public List<Reservation> showOpenDates(@PathVariable Date startDate, @PathVariable Date endDate){
         return reservationService.openReservations(startDate, endDate);
