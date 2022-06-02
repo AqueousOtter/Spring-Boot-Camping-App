@@ -26,6 +26,10 @@ public class ReservationServiceImpl implements ReservationService{
         theReservation.setReservationId(ConfirmationGen.getConfirmationCode());
         reservationRepository.save(theReservation);
     }
+    @Override
+    public void delete(String reservationId){
+        reservationRepository.delete(reservationRepository.getById(reservationId));
+    }
 
     @Override
     public List<Reservation> findAll() {
@@ -42,7 +46,7 @@ public class ReservationServiceImpl implements ReservationService{
             theReservation = results.get();
         }
         else{
-            throw new RuntimeException("No reservations for given guest ID of " + reservationID);
+            throw new RuntimeException("No reservations for given reservation ID of " + reservationID);
 
         }
         return theReservation;

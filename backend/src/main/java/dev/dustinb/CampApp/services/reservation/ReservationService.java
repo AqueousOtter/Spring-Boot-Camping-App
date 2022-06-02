@@ -12,4 +12,5 @@ public interface ReservationService {
     public Reservation findByReservationId(String theId);
     List<Reservation> openReservations(Date searchStartDate, Date searchEndDate);
     List<Reservation> findAllReservationsByGuestId(int guestId);
+    public void delete(String reservationId);
 }

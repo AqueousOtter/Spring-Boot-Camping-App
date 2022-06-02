@@ -12,12 +12,11 @@ import org.springframework.web.client.RestTemplate;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.http.HttpRequest;
-import java.util.Objects;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment= SpringBootTest.WebEnvironment.RANDOM_PORT)
-class CampAppApplicationTests {
+class CampAppEndPointTests {
+
 	@LocalServerPort
 	int randomServerPort;
 
@@ -33,8 +32,6 @@ class CampAppApplicationTests {
 		Assert.assertTrue(result.getBody().contains("reservationId"));
 	}
 
-/*	@Test
-	void contextLoads() {
-	}*/
+
 
 }
