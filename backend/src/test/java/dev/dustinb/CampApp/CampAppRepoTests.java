@@ -3,6 +3,7 @@ import dev.dustinb.CampApp.entity.Reservation;
 import dev.dustinb.CampApp.services.reservation.ReservationService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -21,19 +22,27 @@ class CampAppRepoTests {
     public void testFindAllReservations(){
         List<Reservation> reservationList = reservationService.findAll();
         Assertions.assertTrue(reservationList.size() > 0);
-        Assertions.assertFalse(reservationList.isEmpty());
-        System.out.println(reservationList);
     }
 
-    @DisplayName("Test add reservation")
-    @Test
-    public void testAddReservation(){
-        Reservation reservation = new Reservation(12,new Date(60821466), new Date(668214766), 1005);
-        reservationService.save(reservation);
-        String resID = reservation.getReservationId();
-        Assertions.assertNotNull(reservationService.findByReservationId(resID));
+    @Nested
+    @DisplayName("Add reservation nested tests ")
+    class AddReservation{
+        @Test
+        @DisplayName("add reservation")
+        public void testAddReservation(){
+            Reservation reservation = new Reservation(12,new Date(60821466), new Date(668214766), 1005);
+            reservationService.save(reservation);
+            String resID = reservation.getReservationId();
+            Assertions.assertNotNull(reservationService.findByReservationId(resID));
 
+        }
+        @Test
+        @DisplayName("does not add reservation with incorrect site number")
+        public void incorrectSiteNum(){
+            Assertions.assertTrue(true);
+        }
     }
+
 
     @DisplayName("Test delete reservation")
     @Test
@@ -45,12 +54,7 @@ class CampAppRepoTests {
         List<Reservation> reservationList = reservationService.findAll();
         Assertions.assertFalse(reservationList.contains(reservation));
     }
-    @DisplayName("Test deleting non existent reservation id returns false")
-    @Test
-    public void testDeleteFailsWithFalseReservationID(){
-
-    }
-    @DisplayName("Test for returning by guest id")
+    @DisplayName("Test for reservation by guest id")
     @Test
     public void testReservationByGuestId(){
         List<Reservation> reservationList = reservationService.findAllReservationsByGuestId(1005);
