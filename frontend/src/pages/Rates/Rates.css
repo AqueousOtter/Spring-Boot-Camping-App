@@ -1,4 +1,42 @@
-.rates-section {
+.rate-section {
     height: 100vh;
-    background-color: #e4e4e4;
+    display: flex;
+    justify-content: center;
+    background-color: aliceblue;
+    margin: auto;
+    text-align: center;
+}
+.rate-content {
+
+    margin: auto;
+    display: flex;
+}
+.rate-section ul{
+    list-style-type: none;
+}
+.rate-section a {
+    text-decoration: none;
+}
+.map-card img {
+    margin-top: 50px;
+    margin-left: 200px;
+    width: 700px;
+    height: 425px;
+    box-shadow: 3px 4px 5px rgb(128, 128, 128);
+}
+
+.rate-info {
+    background-color: oldlace;
+    padding-top: 20px;
+    padding: 20px 25px 10px 25px;
+    margin: 0 25px;
+    width: 400px;
+    border: 2px rgb(128, 128, 128) solid;
+    box-shadow: 3px 4px 5px rgb(128, 128, 128);
+
+}
+
+.rate-type {
+    text-align: left;
+    margin-left: 25px;
 }

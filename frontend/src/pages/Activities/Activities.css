@@ -1,18 +1,25 @@
 .activities-section {
-    background-color: #FFEDD2;
-    height: 100vh;
-  
+    height: 110vh;
     text-align: center;
 }
 .activity-cards-section {
-   
+    margin: 0 auto;
     display: flex;
     justify-content: space-evenly;
+}
+.activities-section h2{
+    background-color: #85FFBD;
+    background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
     
+    color: #fff;
+    text-shadow: black 2px 2px 5px;
+    padding-top: 0;
+    padding-bottom: 25px;
+    margin-bottom: 25px;
 }
 
 .activity-cards  {
-    margin-top: 75px;
+ 
     background-color: #fff;
     height: 700px;
     width: 450px;

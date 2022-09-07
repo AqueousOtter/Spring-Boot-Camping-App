@@ -1,6 +1,5 @@
 package dev.dustinb.CampApp.rest;
 
-
 import dev.dustinb.CampApp.entity.Guest;
 import dev.dustinb.CampApp.services.guest.GuestService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +11,7 @@ import java.util.List;
 /*
         Class currently TEST only, supports get request of all guests or single guest
  */
+
 
 @RestController
 @RequestMapping("/api")

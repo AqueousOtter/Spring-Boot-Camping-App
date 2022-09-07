@@ -1,9 +1,8 @@
 .home {
-    border: 4px yellow solid; /* TODO: remove, testing only */
-    background: linear-gradient(rgba(146, 146, 146, 0.164), rgba(146, 146, 146, 0.199)), url("../../../public/assets/img/camp-bg.jpg");
+    background: linear-gradient(rgba(88, 88, 88, 0.164), rgba(88, 88, 88, 0.199)), url("../../../public/assets/img/camp-bg.jpg");
     margin: 0 auto;
-    padding-top: 0px;
-    height: 100vh;
+    padding-top: 50px;
+    height: 80vh;
     color: rgb(68, 68, 68);
 }
 
@@ -23,52 +22,5 @@ h2 {
     font-weight: bold;
     margin: auto;
     padding-top: 15%;
-
-}
-.home-reserve {
-    background-color: #eee; 
-    width: 80%;
-    height: 75px;
-    border: 2px solid black;
-    border-radius: 60px;
-    margin: auto;
-    margin-top: 25px;
-    display: flex;
-    justify-content: space-between;
-}
-.home-reserve p {
-    font-size: 18px;
-    margin-bottom: 10px;
-
-}
-.weather {
-    margin-left: 5%;
-    display: flex;
-    align-items: center;
-}
-.weather img {
-    margin-right: 15px;
-}
-form{
-    display: flex;
-    margin-right: 35px;
-    align-items: center;
-
-}
-.home-reserve-label {
-    display: flex;
-    align-items: center;
-    flex-direction: column;   
-    justify-content: space-between;
-    margin: 0 10px;
-}
-input  {
-    width: 120px;
-    text-align: center;
-    margin-bottom: 15px;
-}
-.home-reserve button {
-    margin-left: 10px;
-    padding: 5px 10px;
 
 }
