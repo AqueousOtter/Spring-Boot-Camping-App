@@ -1,6 +1,7 @@
 package dev.dustinb.CampApp.rest;
 
 
+import dev.dustinb.CampApp.entity.Guest;
 import dev.dustinb.CampApp.entity.Reservation;
 import dev.dustinb.CampApp.services.reservation.ReservationService;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,6 +30,11 @@ public class RestReservationController {
     @GetMapping("/available/{startDate}/{endDate}")
     public List<Reservation> showOpenDates(@PathVariable Date startDate, @PathVariable Date endDate){
         return reservationService.openReservations(startDate, endDate);
+    }
+
+    @GetMapping("/view/showReservations/{guestID}")
+    public List<Reservation> showReservationsForGuestID(@PathVariable int guestID){
+        return reservationService.findAllReservationsByGuestId(guestID);
     }
 
 
